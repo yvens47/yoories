@@ -26,7 +26,7 @@ $user = new User();
         <div class="titlePost">
                 <h1>Yoories Media Center</h1>
              <p>
-                We Currently Have 65 haitian Movies <i class="glyphicon glyphicon-earphone"></i>
+                We Currentlyevev skjdbsdHave 65 haitian Movies <i class="glyphicon glyphicon-earphone"></i>
              </p>
         </div>
         <div class="form-post-wrap">
@@ -61,7 +61,7 @@ $user = new User();
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged
+                remaining essentially unchangedeefeeew
 
 
 
