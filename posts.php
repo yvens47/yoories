@@ -4,16 +4,14 @@ session_start();
 require_once 'autoload.php';
 $title = "Homepage title";
 
-if(!apc_exists('page')){
-    $page  = new Page($title);
-    apc_add('page', $page);
-}
 
-if(!apc_exists('youtube')){
+    $page  = new Page($title);
+
+
     $youtube = new GoogleApiYoutube();
-    apc_add('youtube', $youtube);
-}
-$page = apc_fetch('page');
+
+
+
 $user = new User();
 
 
@@ -26,7 +24,7 @@ $user = new User();
         <div class="titlePost">
                 <h1>Yoories Media Center</h1>
              <p>
-                We Currentlyevev skjdbsdHave 65 haitian Movies <i class="glyphicon glyphicon-earphone"></i>
+                We Currentlyevev skjdbsdHave 65 haitian Mobjhhvvies <i class="glyphicon glyphicon-earphone"></i>
              </p>
         </div>
         <div class="form-post-wrap">
