@@ -13,6 +13,7 @@ $page = apc_fetch('page');
 $user = new User();
 
 if($user->isLogin()){ header('location: app.php');};
+$page->setTitle($title);
 ?>
 
 <?php require_once 'templates/header.php' ;?>

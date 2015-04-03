@@ -6,7 +6,7 @@
  * Time: 7:54 PM
  */
 
-require_once'Form.php';
+
 require_once 'Database.php';
 
 class User {
@@ -19,7 +19,7 @@ class User {
     function __construct()
 
     {
-        $this->form = new Form();
+
         $this->db = new Database('Yoories');
     }
 
@@ -30,6 +30,8 @@ class User {
 
         //var_dump($this->db->connect());
              // login user in
+            mysqli_real_escape_string($this->db, $email);
+            mysqli_real_escape_string($this->db, $password);
              $sql = "Select password,email from login where email ='$email' and password='$password'";
              $q = $this->db->query($sql);
              if(mysqli_num_rows($q) ==0){

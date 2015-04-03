@@ -52,6 +52,179 @@ float: none;
 margin: 0 auto;
 }
 
-.small-margin{
-    margin-top: 25px;
+
+.small-margin {
+    margin-top: 10%;
+}
+.post-wrap {
+    width: 90%;
+    /* background: rebeccapurple; */
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form-post-wrap {
+    margin: 15px auto;
+    width: 70%;
+    /* background: green; */
+    text-align: left;
+}
+
+img.media-object {
+    width: 100px;
+    height: 100px;
+}
+
+.form-post-wrap label{
+    display: none;
+}
+.titlePost h1 {
+    padding: 20px 0 0 0;
+    color: #662B2B;
+}
+
+.titlePost h1 {
+    padding: 20px 0 0 0;
+    color: #662B2B;
+}
+input#exampleInputEmail2 {
+    width: 540px;
+}
+
+.wrapper {
+    min-height: 90%;
+    background: white;
+}
+.trends img {
+    width: 100%;
+    padding: 2px 3px;
+}
+.trends {
+    width: 19%;
+    float: left;
+    padding: 2px 3px;
+    border: solid 1px #fff;
+    margin-right: 3px;
+    height: auto;
+    overflow: hidden;
+    background:white;
+    margin-bottom: 5px;
+}
+.large-head {
+    height: 300px;
+    background: #eee;
+    padding: 10px 10px;
+}
+
+.trends {
+    width: 24%;
+    float: left;
+    padding: 2px 3px;
+    border: solid 1px #fff;
+    margin-right: 3px;
+    height: 135px;
+    overflow: hidden;
+    background: white;
+    margin-bottom: 10px;
+}
+
+#bg {
+    background: #4A0909;
+}
+
+ul.most-popular li p {
+    font-weight: bold;
+}
+ul.most-popular li img {
+    width: 90px;
+    border: solid 1px #eee;
+    padding: 3px 4px;
+    float: left;
+    margin-right: 10px;
+}
+ul.most-popular li {
+    height: auto;
+    overflow: hidden;
+    border-bottom: solid rgb(143, 143, 166) 1px;
+    padding: 2px 3px;
+}
+ul.most-popular {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.share-tab {
+    height: auto;
+    background: #eee;
+    padding: 3px 10px;
+    overflow: hidden;
+    border-bottom: solid 1px #E5DBDB;
+}
+.recom img {
+    width:100%;
+
+    margin: 2px 10px 3px 0;
+    border: solid 1px #D8EAF2;
+    padding: 3px 4px;
+}
+.recom1 img {
+    width:100%;
+
+    margin: 2px 10px 3px 0;
+    border: solid 1px #D8EAF2;
+    padding: 3px 4px;
+}
+.lthumbs img {
+    width: 100%;
+    margin-top: 4px;
+    padding: 2px 3px;
+
+}
+.lthumbs {
+    width: 32%;
+    float: left;
+    margin: 0 10px 2px 0;
+}
+h3.lrecom {
+    margin: 0px 0px 3px 15px;
+}
+
+img.picthumb {
+    width: 100px;
+    background: #eee;
+    height: 45px;
+    padding: 2px 3px;
+    float: left;
+    margin-right: 10px;
+}
+.comments div {
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.name{
+    font-weight: bold;;
+}
+.no-mg{
+    margin:0;
+}
+p.name {
+    color: white;
+    position: relative;
+    top: -38px;
+    padding: 2px 4px;
+    text-align: center;
+}
+@media screen and (max-width: 360px){
+    .trends{
+        width:100%;
+        bacground: #87ffcb;
+        height:20%;
+    }
+
+    .trends p{
+        font-weight:bold;
+
+    }
 }

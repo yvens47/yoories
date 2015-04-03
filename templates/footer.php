@@ -1,8 +1,8 @@
 
 </div><!-- /.container -->
 
-
-<div class="container">
+</div>
+<div class="container footer">
     <p>copyright 2014</p>
 </div>
 

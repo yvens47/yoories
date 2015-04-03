@@ -15,3 +15,9 @@ RewriteRule ^user/login$   /login.php
 RewriteRule ^tutorials$   /posts.php
 # VIEW a post
 RewriteRule ^tutorial/(\d)/?$  /view.php?id=$1
+
+
+#videos
+
+RewriteRule ^haitian-movies$ /videos.php
+

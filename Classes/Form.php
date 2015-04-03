@@ -6,12 +6,21 @@
  * Time: 7:56 PM
  */
 
+
+require_once realpath(dirname(__FILE__)."/../facebook/autoload.php");
 class Form {
 
     private $email;
 
+    function __construct(){
+        //$client = new Google_Client();
+
+    }
+
 
     function validateEmail($email){
+
+
         $this->email = $email;
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
 

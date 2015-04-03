@@ -8,8 +8,17 @@
 session_start();
 
 require_once 'autoload.php';
-$scrapper = new Scrapper();
+$fomt = new Form();
 
+$n = new GoogleApiYoutube();
 
-//$url = $scrapper->SiteUrl("http://www.radiotelevisioncaraibes.com/");
-print_r($scrapper->dom("http://www.radiotelevisioncaraibes.com/"));
+//$n->video("GibJrsSj-0M");
+
+$d = $n->playlist("PLXnl5zCv8dG8k67afx_pv0cjhyjTQ4dz7");
+
+foreach($d as $list){
+    $id = (($list['snippet']['resourceId']['videoId']));
+    $n->save($id);
+}
+
+$n->showsAll();

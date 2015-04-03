@@ -30,6 +30,10 @@
 
 <body>
 
+
+
+<div class="wrapper" <?php if($_SERVER['SCRIPT_NAME'] =='/index.php') echo "id=\"bg\""; ?>>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -46,6 +50,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="tutorials">Tutorials</a></li>
                 <li><a href="#contact">Howto</a></li>
+                <li><a href="haitian-movies">Videos</a></li>
                 <li><a href="#">Tips</a></li>
             </ul>
 

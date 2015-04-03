@@ -8,8 +8,15 @@ if(!apc_exists('page')){
     $page  = new Page($title);
     apc_add('page', $page);
 }
+
+if(!apc_exists('youtube')){
+    $youtube = new GoogleApiYoutube();
+    apc_add('youtube', $youtube);
+}
 $page = apc_fetch('page');
 $user = new User();
+$data = $data = apc_fetch('youtube')->showsAll() ;
+$pagination = new Pagination($data);
 
 ?>
 
@@ -29,13 +36,13 @@ $user = new User();
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="...">
+                        <img src="pic.png" alt="...">
                         <div class="carousel-caption">
                             ...
                         </div>
                     </div>
                     <div class="item">
-                        <img src="http://media1.gameinformer.com/imagefeed/screenshots/MortalKombatX/MKX_GamescomScreenshot_KanoScorpion.jpg" alt="...">
+                        <img src="pic2.png" alt="...">
                         <div class="carousel-caption">
                             ...
                         </div>
@@ -57,14 +64,11 @@ $user = new User();
         </div>
     </div>
     <div class="col-md-4 tpad">
-        <div class="panel panel-primary" style="height:422px">
+        <div class="panel panel-primary" style="height:318px">
             <div class="panel-heading"> <h3 class="panel-title">Latest Movies</h3></div>
             <div class="panel-body">
                 <ul class="latest">
                     <li>
-                        <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-                        <p class="ltitle"> title for the  latest video in the database display here</p>
-                    </li><li>
                         <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
                         <p class="ltitle"> title for the  latest video in the database display here</p>
                     </li><li>
@@ -79,16 +83,53 @@ $user = new User();
             </div>
 
         </div>
-        <hr/>
-        <div class="row">
-
-        </div>
-
-
-
 
     </div>
        </div>
+    <hr/>
+    <div class="row">
+        <div class='col-md-9'>
+
+            <?php //$chunk =  array_chunk(apc_fetch('youtube')->showsAll(),5)?>
+
+            <?php $data = apc_fetch('youtube')->showsAll() ;
+                   $d= ($pagination->getPaginData());
+                    foreach($d as $ds){
+
+                       apc_fetch('youtube')->video($ds);
+                       // echo "<br/>";
+                    }
+
+
+            ?>
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="clearfix"></div>
+        <hr/>
+
+        <?php
+                if($pagination->getPaginData()->getPages()){
+                  //  print_r($pagination->getPaginData()->getPages());
+                }
+
+        ?>
+        <ul class="pagination pagination-lg">
+            <li>
+                <a href="?page=<?php ?>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+             <?php   $pagination->link();     ?>
+            <li> <a href="?page=<?php?>" aria-label="Next"><span aria-hidden="true">&raquo;</span>  </a>   </li>
+            </ul>
+
+
+    </div>
+
+
 
 
 

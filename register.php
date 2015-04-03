@@ -18,7 +18,7 @@ if($user->isLogin()){ header('location: app.php');};
 <?php require_once 'templates/header.php' ;?>
 <div class='row'>
     <div class='col-md-5 mid small-margin'>
-        <form class="form-horizontal" method='post' action='User/registration.php'>
+        <form class="form-horizontal sregister" method='post' action='User/registration.php'>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
@@ -28,13 +28,13 @@ if($user->isLogin()){ header('location: app.php');};
   <div class="form-group">
     <label for="inputPassword3"  class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" name='password' class="form-control" id="inputPassword3" placeholder="Password">
+      <input type="password" name='password' class="form-control pass" id="inputPassword3" placeholder="Password">
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" >Register</button>
+      <button type="submit" class="btn btn-default register " >Register</button>
     </div>
   </div>
 </form>

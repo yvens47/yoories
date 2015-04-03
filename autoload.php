@@ -5,13 +5,14 @@
  * Date: 3/22/15
  * Time: 6:26 PM
  */
+spl_autoload_register(function($class){
 
-function __autoload($class){
+    $dir = __DIR__.DIRECTORY_SEPARATOR.'/Classes/';
+    if(file_exists($dir.$class.".php")){
+        require  $dir.$class.".php";
+    }
 
-        if(file_exists("Classes/".$class.".php")){
-            require_once "Classes/".$class.".php";
-        }
+});
 
 
-
-}
+   
