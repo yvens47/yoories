@@ -1,5 +1,5 @@
 <div class="sharing">
-    <form method="post"  action="Post/doAdd.php">
+    <form method="post"  action="Post/doAdd.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputFile">Images</label>
-            <input type="file" id="exampleInputFile">
+            <input type="file" name='image' id="exampleInputFile">
 
         </div>
 
