@@ -23,7 +23,7 @@ class Pagination
         $this->page->setCurrentPageNumber($this->param);
         $this->pages = $this->page->count();
 
-        $this->page->setItemCountPerPage(15);
+        $this->page->setItemCountPerPage(8);
 
 
     }
@@ -47,7 +47,7 @@ class Pagination
             if ($i == $this->param) {
                 echo " <li class='active'><a href=\"?page=$i\">" . $i . '</a></li>    ';
             } else {
-                echo " <li><a href=\"?page=$i\">" . $i . '</a></li>    ';
+                echo " <li><a href=\"haitian-movies?page=$i\">" . $i . '</a></li>    ';
             }
         }
     }

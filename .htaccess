@@ -21,3 +21,11 @@ RewriteRule ^tutorial/(\d)/?$  /view.php?id=$1
 
 RewriteRule ^haitian-movies$ /videos.php
 
+RewriteRule ^haitian-movie/(\d)/?$  /videos.php?page=$1
+
+
+#search
+
+
+RewriteRule ^search$   /search-results.php
+RewriteRule ^search/(\d)/?$   /search-results.php?q=$1

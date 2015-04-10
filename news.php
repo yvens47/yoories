@@ -5,20 +5,33 @@
  * Date: 3/25/15
  * Time: 8:21 PM
  */
-session_start();
 
-require_once 'autoload.php';
-$fomt = new Form();
 
-$n = new GoogleApiYoutube();
+function url($url){
+    $u = file_get_contents($url);
 
-//$n->video("GibJrsSj-0M");
+    return $u;
 
-$d = $n->playlist("PLXnl5zCv8dG8k67afx_pv0cjhyjTQ4dz7");
-
-foreach($d as $list){
-    $id = (($list['snippet']['resourceId']['videoId']));
-    $n->save($id);
 }
 
-$n->showsAll();
+
+
+/**
+ * @param $url
+ */
+function DomPath($url)
+{
+    $html = new DOMDocument();
+    @$html->loadHTML($url);
+    $domXpath = new DOMXPath($html);
+    print_r($domXpath);
+
+    return $domXpath;
+}
+
+
+$url = url("http://www.wow509.com/");
+$dom = DomPath($url);
+$q =$dom->query('title');
+print_r($q);
+

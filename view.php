@@ -17,6 +17,9 @@ if(strlen($id)> 11  || strlen($id)< 11){
     require_once 'autoload.php';
     $title = "Haitian title";
 
+  $location = "http://yoories.com".($_SERVER['REQUEST_URI']);
+
+
     if(!apc_exists('page')){
         $page  = new Page($title);
         apc_add('page', $page);
@@ -29,6 +32,8 @@ if(strlen($id)> 11  || strlen($id)< 11){
     $page = apc_fetch('page');
     $page->setTitle($title);
     $user = new User();
+     if(!apc_fetch("youtube")->isVideoExists($id))
+            header("location: home");
 
     ?>
 
@@ -36,80 +41,49 @@ if(strlen($id)> 11  || strlen($id)< 11){
     <div class="row">
         <div style="margin-top: 20px"></div>
 
-        <div class="col-md-8">
+        <div class="col-md-8 views-main">
             <div class="embed-responsive embed-responsive-16by9">
                 <?php apc_fetch('youtube')->vidInfo($id);?>
             </div>
 
-            <div class="share-tab">
-                <i class="glyphicon glyphicon-plus-sign"></i>
-                <p>6 comments</p>
+
+
+<hr/>
+
+
+
+
+            <div class="comments">
+                <?php //apc_fetch('youtube')->commentsfeed($id);?>
+
+                <div class="fb-comments" data-width="100%"
+                     data-numposts="5" data-colorscheme="light" data-href="<?php echo $location ;?>"></div>
+
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 views-left">
             <ul class="most-popular">
                 <?php  apc_fetch('youtube')->mostPopularYoutube();?>
             </ul>
-
-
-
-        </div>
-    </div>
-    <hr/>
-    <div class="row">
-        <h3 class="lrecom">Similar Movies <i class="glyphicon glyphicon-arrow-right"></i> </h3>
-        <div class="col-md-4 pull-left recom">
-            <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg"/>
-            <p> a bunch of contents will be here here to describe this videos
-            <a href="" class="btn btn-warning">Vierw </a>
-            </p>
-
-        </div>
-        <div class="col-md-8 pull-left ">
-            <div class="lthumbs">
+    <h2> Most Popular</h2>
+            <div class=" recom">
                 <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg"/>
-               <!-- <p> a bunch of contents will be here here to describe this videos
+                <p> a bunch of contents will be here here to describe this videos
                     <a href="" class="btn btn-warning">Vierw </a>
-                </p>-->
+                </p>
+
             </div>
 
-            <div class="lthumbs">
-                <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg"/>
-                <!-- <p> a bunch of contents will be here here to describe this videos
-                     <a href="" class="btn btn-warning">Vierw </a>
-                 </p>-->
-            </div>
-
-
-            <div class="lthumbs">
-                <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg"/>
-                <!-- <p> a bunch of contents will be here here to describe this videos
-                     <a href="" class="btn btn-warning">Vierw </a>
-                 </p>-->
-            </div>
-
-
-            <div class="lthumbs">
-                <img class="" src="http://upload.wikimedia.org/wikipedia/commons/5/53/Eiffel_tower_fireworks_on_July_14th_Bastille_Day.jpg"/>
-                <!-- <p> a bunch of contents will be here here to describe this videos
-                     <a href="" class="btn btn-warning">Vierw </a>
-                 </p>-->
-            </div>
 
 
         </div>
-
-
     </div>
-    <div class="row">
-        <hr/>
-        <h3>Comments</h3>
-        <div class="col-md-7">
-            <div class="comments">
-                <?php apc_fetch('youtube')->commentsfeed($id);?>
 
-            </div>
-        </div>
+
+
+
+    <div class="row">
+
 
     </div>
 

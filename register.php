@@ -34,7 +34,7 @@ if($user->isLogin()){ header('location: app.php');};
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default register " >Register</button>
+      <button type="submit" class="btn btn-primary register " >Register</button>
     </div>
   </div>
 </form>

@@ -1,8 +1,8 @@
 <?php
 
 session_start();
- require_once 'autoload.php';
- $title = "Homepage title";
+require_once 'autoload.php';
+$title = "Homepage title";
 
 if(!apc_exists('page')){
     $page  = new Page($title);
@@ -15,122 +15,145 @@ if(!apc_exists('youtube')){
 }
 $page = apc_fetch('page');
 $user = new User();
-$data = $data = apc_fetch('youtube')->showsAll() ;
-$pagination = new Pagination($data);
+
 
 ?>
 
-<?php require_once 'templates/header.php' ;?>
+<?php require_once 'templates/header2.php' ;?>
 
-   <div class="row">
-    <div class="col-lg-8">
-        <div class="starter-template">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
+<div class="large-head">
+    <div class="container">
+    <div class="post-wrap">
+        <div class="titlePost">
+                <h1>Yoories</h1>
+            <h2>The Haitian Most Popular Media Center</h2>
+             <p>
+                We Currently Have 65 haitian Movies <i class="glyphicon glyphicon-earphone"></i>
+             </p>
+        </div>
+        <div class="form-post-wrap">
+            <form class="form-inline" method="get" action="search">
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="pic.png" alt="...">
-                        <div class="carousel-caption">
-                            ...
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="pic2.png" alt="...">
-                        <div class="carousel-caption">
-                            ...
-                        </div>
-                    </div>
-
+                <div class="form-group search-wrap">
+                    <label for="exampleInputEmail2">Email</label>
+                    <input type="search" class="form-control" name="q" id="exampleInputEmail2" placeholder="enter search Query">
                 </div>
 
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+            </form>
 
         </div>
     </div>
-    <div class="col-md-4 tpad">
-        <div class="panel panel-primary" style="height:318px">
-            <div class="panel-heading"> <h3 class="panel-title">Latest Movies</h3></div>
-            <div class="panel-body">
-                <ul class="latest">
-                    <li>
-                        <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-                        <p class="ltitle"> title for the  latest video in the database display here</p>
-                    </li><li>
-                        <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-                        <p class="ltitle"> title for the  latest video in the database display here</p>
-                    </li><li>
-                        <img src="http://static1.gamespot.com/uploads/original/1365/13658182/2559558-mortalkombatx_kotal_scorpion_snowforest_choke.jpg" alt="">
-                        <p class="ltitle"> title for the  latest video in the database display here</p>
-                    </li>
-
-                </ul>
-            </div>
-
-        </div>
-
     </div>
-       </div>
-    <hr/>
-    <div class="row">
-        <div class='col-md-9'>
-
-            <?php //$chunk =  array_chunk(apc_fetch('youtube')->showsAll(),5)?>
-
-            <?php $data = apc_fetch('youtube')->showsAll() ;
-                   $d= ($pagination->getPaginData());
-                    foreach($d as $ds){
-
-                       apc_fetch('youtube')->video($ds);
-                       // echo "<br/>";
-                    }
 
 
-            ?>
+</div>
+    <div class="container">
 
-        </div>
-        <div class="col-md-3">
+        <div class="row">
+            <ul class="addons">
+                <li class="">
 
-        </div>
-        <div class="clearfix"></div>
-        <hr/>
+                        <h2><i class="glyphicon glyphicon-play"></i> </h2>
+                   <p class="play"></p>
+                        <p>Watch as much Haitian movies as you can, free of chargemauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                        <p><a class="btn btn-default" href="#" role="button">Watch  »</a></p>
 
-        <?php
-                if($pagination->getPaginData()->getPages()){
-                  //  print_r($pagination->getPaginData()->getPages());
-                }
+                </li>
 
-        ?>
-        <ul class="pagination pagination-lg">
-            <li>
-                <a href="?page=<?php ?>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-             <?php   $pagination->link();     ?>
-            <li> <a href="?page=<?php?>" aria-label="Next"><span aria-hidden="true">&raquo;</span>  </a>   </li>
+                <li>
+
+                    <h2><i class="glyphicon glyphicon-open"></i> </h2>
+                    <p class="add"></p>
+                    <p> Sometimes it could be a pain to upload some file to the internet
+                         but in this site We make it very easy to upload  your movies on the site... </p>
+                    <p><a class="btn btn-default" href="#" role="button">Let's Upload»</a></p>
+
+                </li>
+
+
+                <li>
+
+                    <h2><i class="glyphicon glyphicon-pushpin"></i> </h2>
+                    <p class="up"></p>
+                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <p><a class="btn btn-default" href="#" role="button">List »</a></p>
+
+                </li>
             </ul>
 
+        </div>
+        <hr/>
 
+<div class="row">
+
+    <div class="col-md-8">
+        <h2 class="p-title">Latest Post </h2>
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="pic.png" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Videos One</h4>
+                ...Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged
+
+
+
+            </div>
+        </div>
+
+
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="pic.png" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Videos One</h4>
+                ...Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged
+
+
+
+            </div>
+        </div>
     </div>
 
+    <div class="col-md-4">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                Cras justo odio
+            </a>
+            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item">Morbi leo risus</a>
+            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+        </div>
 
+        <div class="subs">
 
+        </div>
+        <div class="ltweets">
+
+        </div>
+        <div class="ads"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="center-title">Most popular</h2>
+        </div>
+    </div>
+
+</div>
 
 
 <?php require_once 'templates/footer.php' ;?>

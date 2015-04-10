@@ -42,6 +42,10 @@ class Database {
         return mysqli_query($this->connect(), $sql);
     }
 
+    function close(){
+        mysqli_close($this->connect());
+    }
+
     /*public  function getInstace(){
 
         if(!isset(self::$instance)){
